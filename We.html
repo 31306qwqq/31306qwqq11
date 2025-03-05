@@ -93,11 +93,13 @@
         document.getElementById("open-camera").addEventListener("click", async () => {
             try {
                 // 請求後置攝像頭
-                const stream = await navigator.mediaDevices.getUserMedia({
-                    video: {
-                        facingMode: { exact: "environment" }  // 強制使用後置攝像頭
-                    }
-                });
+                const constraints = ｛
+                      video：｛
+                         facingMide："environment"
+                    ｝
+                
+                    ｝
+                    
                 video.srcObject = stream;
                 video.style.display = "block";
                 captureButton.style.display = "block";
